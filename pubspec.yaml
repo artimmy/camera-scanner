@@ -1,0 +1,31 @@
+name: camera_scanner
+description: A new Flutter project for scanning documents via camera and generating PDF files.
+
+# The project version follows semantic versioning: major.minor.patch+build_number
+version: 1.0.0+1
+
+# Define the Dart SDK constraints
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+# Project dependencies
+dependencies:
+  flutter:
+    sdk: flutter
+  camera: ^0.11.0
+  image_picker: ^0.8.7
+  path_provider: ^2.0.14
+  pdf: ^3.11.1
+  cunning_document_scanner: ^1.2.3
+
+  
+
+# Development dependencies for testing and linting
+dev_dependencies:
+  flutter_test:
+    sdk: flutter                # Testing framework
+  flutter_lints: ^3.0.0         # Linting rules for Flutter projects
+
+# Flutter-specific configuration
+flutter:
+  uses-material-design: true    # Use Material Design for widgets
