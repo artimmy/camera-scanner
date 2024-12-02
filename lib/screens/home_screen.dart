@@ -17,11 +17,18 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _isGeneratingPdf = false;
 
   Future<void> _addPictures() async {
-    final pictures = await DocumentScannerService.scanDocuments();
-    if (!mounted) return;
-    setState(() {
-      _pictures = pictures;
-    });
+    try {
+      final pictures = await DocumentScannerService.scanDocuments();
+      if (!mounted) return;
+      setState(() {
+        _pictures = pictures;
+      });
+    } catch (e) {
+      // Handle scanning failure (e.g., no permission or device error)
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Failed to scan documents")),
+      );
+    }
   }
 
   Future<void> _generatePdf(BuildContext context) async {
@@ -71,8 +78,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   return Card(
                     clipBehavior: Clip.antiAlias,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(12.0),
                     ),
+                    elevation: 4.0,
                     child: Image.file(
                       File(_pictures[index]),
                       fit: BoxFit.cover,
@@ -92,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: const Icon(Icons.add_photo_alternate),
             backgroundColor: Colors.indigo,
           ),
-          const SizedBox(height: 12.0),
+          const SizedBox(height: 16.0),
           FloatingActionButton.extended(
             onPressed: () => _generatePdf(context),
             label: _isGeneratingPdf
@@ -108,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Text(
-          "Add pictures to generate a PDF",
+          "Start by adding pictures to create a PDF",
           style: TextStyle(
             fontSize: 16,
             color: Colors.grey[700],
