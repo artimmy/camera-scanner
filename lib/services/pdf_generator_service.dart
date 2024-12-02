@@ -41,7 +41,8 @@ class PdfGeneratorService {
 
     try {
       final downloadsFolder = await _getDownloadsFolder();
-      final now = DateTime.timestamp().toLocal();
+      final now =
+          DateTime.timestamp().toLocal().toString().replaceAll(':', '-');
       final outputFile = File('$downloadsFolder/scanned_document_$now.pdf');
       await outputFile.writeAsBytes(await pdf.save());
 
