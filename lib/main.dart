@@ -1,4 +1,5 @@
 import 'package:camera_scanner/screens/home_screen.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Camera Scanner',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: const HomeScreen(),
+      debugShowCheckedModeBanner: (kDebugMode) ? true : false,
     );
   }
 }
