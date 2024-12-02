@@ -4,8 +4,12 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app requires access to your photo library to allow you to select and upload pictures.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>camera to take the photos</string>
+	<string>This app requires access to your camera to scan documents and take pictures.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app requires access to your microphone for recording audio when capturing videos.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Should not use microphone audio</string>
 	<key>CFBundleDisplayName</key>
