@@ -99,12 +99,8 @@ This service is responsible for handling the document scanning functionality. It
 ### 2. PdfGeneratorService
 This service handles the PDF generation process. It uses the pdf package to generate a PDF document from the scanned images.
 
-Contributing
+## Contributing
 Feel free to fork this project and submit pull requests. Any improvements or fixes are welcome.
 
-License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-```css
-This `README.md` provides a clear structure for users to set up, use, and contribute to your Flutter document scanner app. Feel free to modify any sections to better fit your project specifics.
-```
