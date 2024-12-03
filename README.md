@@ -103,4 +103,4 @@ This service handles the PDF generation process. It uses the pdf package to gene
 Feel free to fork this project and submit pull requests. Any improvements or fixes are welcome.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
