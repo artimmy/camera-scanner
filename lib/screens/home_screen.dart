@@ -32,6 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _generatePdf(BuildContext context) async {
+    if (_pictures.isEmpty) {
+      // Handle scanning failure (e.g., no permission or device error)
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Click on add pictures first")),
+      );
+      return;
+    }
+
     setState(() {
       _isGeneratingPdf = true;
     });
